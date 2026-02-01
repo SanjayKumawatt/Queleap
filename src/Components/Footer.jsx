@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, MapPin, ChevronRight } from 'lucide-react';
 
+import logo from "../assets/logo.png";
+import logo2 from "../assets/logo2.jpeg";
+
 // Replace with your actual logo path
-const LOGO_SRC = "/path-to-your-logo.png"; 
+const LOGO_SRC = "/path-to-your-logo.png";
 
 const Footer = () => {
   // Navigation Links provided by you
@@ -36,25 +39,16 @@ const Footer = () => {
   return (
     <footer className="bg-[#050810] border-t border-gray-900 pt-16 pb-8 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          
+
           {/* --- Column 1: Company Info --- */}
           <div className="lg:col-span-2 space-y-6">
             {/* Logo Area */}
             <div className="flex items-center gap-2">
-              <div className="h-8 w-8 bg-white rounded flex items-center justify-center overflow-hidden">
-                <img 
-                   src={LOGO_SRC} 
-                   alt="Logo" 
-                   className="object-contain h-full w-full p-1"
-                   onError={(e) => {e.target.style.display='none'; e.target.parentNode.innerHTML='🌱'}}
-                 />
-              </div>
-              <div>
-                <h3 className="text-white font-bold text-lg tracking-wide">QULEAP INTELLIGENCE</h3>
-                <p className="text-[10px] text-gray-500 italic">PRIVATE LIMITED</p>
-              </div>
+              <img src={logo2} className='h-12' alt="" />
+              <img src={logo} className='h-13 ' alt="" />
+
             </div>
 
             <p className="text-gray-400 leading-relaxed max-w-sm">
@@ -71,7 +65,7 @@ const Footer = () => {
                   Sector -45, Haryana, India, 122003
                 </span>
               </div>
-              
+
               <div className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-teal-500 shrink-0" />
                 <a href="mailto:contact@quleapai.in" className="hover:text-white transition-colors">
@@ -87,7 +81,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a 
+                  <a
                     href={`#${link.targetId}`}
                     onClick={(e) => handleScroll(e, link.targetId)}
                     className="flex items-center gap-2 text-gray-400 hover:text-teal-400 transition-colors group cursor-pointer"
@@ -125,8 +119,8 @@ const Footer = () => {
           <p className="text-gray-500 text-xs">
             &copy; {currentYear} Quleap Intelligence Private Limited. All rights reserved.
           </p>
-          
-          
+
+
         </div>
 
       </div>
